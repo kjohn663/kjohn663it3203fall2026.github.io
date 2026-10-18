@@ -49,6 +49,5 @@ div {
 }
 
 #header li:hover {
-  cursor: pointer;
   background: #e6e6e6;
 }
