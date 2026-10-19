@@ -5,6 +5,7 @@ html{
 
 body{
   padding 10px;
+  font-family: Tahoma, sans-serif;
 }
 
 /* Making divs display as grid */
@@ -81,4 +82,11 @@ table {
 /* img scaling */
 img {
   max-width: 100%;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background: #e6e6e6;
+  text-align: left;
 }
