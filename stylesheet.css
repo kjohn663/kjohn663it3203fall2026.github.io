@@ -1,11 +1,18 @@
-body {
-  display: block;
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%
 }
 
+body{
+  padding 10px;
+}
+
+/* Making divs display as grid */
 div {
   display: grid;
 }
 
+/* Behaviour for the nav bar toggle ul element (to open the menu) */
 #header {
   display: block;
   width: 100%;
@@ -20,6 +27,16 @@ div {
   display: block;
 }
 
+#header ul{
+  display: none;
+  position: relative;
+}
+
+#header:hover ul{
+  display: block;
+}
+
+/* display of the toggle */
 #header:active #toggle{
   display: inline-block;
 }
@@ -34,15 +51,7 @@ div {
   background: #e6e6e6;
 }
 
-#header ul{
-  display: none;
-  position: relative;
-}
-
-#header:hover ul{
-  display: block;
-}
-
+/* Behaviour and display for the individual nav links */
 #header li{
   list-style: none;
   padding: 10px;
@@ -50,4 +59,26 @@ div {
 
 #header li:hover {
   background: #e6e6e6;
+}
+
+/* Organizing Page content using grid 2/5 ratio */
+.grid_organize {
+  display: grid;
+  grid-template-columns:2fr 5fr;
+}
+
+/* CSS for Key Terms */
+table, th, td {
+  border-collapse: collapse;
+  border: 2px solid;
+  padding: 8 8 8 8 ;
+}
+
+table {
+  width: 100%;
+}
+
+/* img scaling */
+img {
+  max-width: 100%;
 }
