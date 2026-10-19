@@ -67,7 +67,6 @@ div {
 
 #title {
   background-image: url('title.png');
-  background-size: cover;
   width: 100%;
   min-height: 200px;
   display: flex;
