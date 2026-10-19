@@ -6,6 +6,7 @@ html{
 body{
   padding 10px;
   font-family: Tahoma, sans-serif;
+  color: #006600;
 }
 
 /* Making divs display as grid */
@@ -61,6 +62,19 @@ div {
 #header li:hover {
   background: #e6e6e6;
 }
+
+/* Title CSS */
+
+#title {
+  background-image: url('title.png');
+  background-size: cover;
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* Organizing Page content using grid 2/5 ratio */
 .grid_organize {
