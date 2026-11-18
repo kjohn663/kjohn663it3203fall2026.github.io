@@ -1,115 +1,44 @@
-//functions
-function buildQuiz(){
-  // variable to store the HTML output
-  const output = [];
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>kjohn663</title>
+</head>
+<body>
+  <!-- Navigation Header -->
+  <nav id = "header">
+    <div id = "toggle">Quiz</div>
+    <ul>
+      <a href="index.html"><li>Home</li></a>
+      <a href="key_concepts.html"><li>Key Concepts</li></a>
+      <a href="history.html"><li>History</li></a>
+      <a href="modern.html"><li>Modern Browsers</li></a>
+      <a href="quiz.html"><li>Quiz</li></a>
+      <a href="ref.html"><li>References</li></a>
+      <a href="info.html"><li>About</li></a>
+    </ul>
+  </nav>
 
-  // for each question...
-  myQuestions.forEach(
-    (currentQuestion, questionNumber) => {
+  <!-- Title --> 
+  <div id="title">
+    <img src="https://raw.githubusercontent.com/kjohn663/kjohn663it3203fall2026.github.io/refs/heads/main/title_left.png" class = "title_left">
+    <img src="https://raw.githubusercontent.com/kjohn663/kjohn663it3203fall2026.github.io/refs/heads/main/title_right.png" class = "title_right">
+    <h1>
+      All About Web Browsers
+    </h1>
+  </div>
+  
+  <!-- quiz??? -->
+  <div id="quiz"></div>
+  <button id="submit">Submit Quiz</button>
+  <div id="results"></div>
 
-      // variable to store the list of possible answers
-      const answers = [];
-
-      // and for each available answer...
-      for(letter in currentQuestion.answers){
-
-        // ...add an HTML radio button
-        answers.push(
-          `<label>
-            <input type="radio" name="question${questionNumber}" value="${letter}">
-            ${letter} :
-            ${currentQuestion.answers[letter]}
-          </label>`
-        );
-      }
-
-      // add this question and its answers to the output
-      output.push(
-        `<div class="question"> ${currentQuestion.question} </div>
-        <div class="answers"> ${answers.join('')} </div>`
-      );
-    }
-  );
-
-  // finally combine our output list into one string of HTML and put it on the page
-  quizContainer.innerHTML = output.join('');
-}
-
-function showResults(){
-
-  // gather answer containers from our quiz
-  const answerContainers = quizContainer.querySelectorAll('.answers');
-
-  // keep track of user's answers
-  let numCorrect = 0;
-
-  // for each question...
-  myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-    // find selected answer
-    const answerContainer = answerContainers[questionNumber];
-    const selector = `input[name=question${questionNumber}]:checked`;
-    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-    // if answer is correct
-    if(userAnswer === currentQuestion.correctAnswer){
-      // add to the number of correct answers
-      numCorrect++;
-
-      // color the answers green
-      answerContainers[questionNumber].style.color = 'lightgreen';
-    }
-    // if answer is wrong or blank
-    else{
-      // color the answers red
-      answerContainers[questionNumber].style.color = 'red';
-    }
-  });
-
-  // show number of correct answers out of total
-  resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-}
-
-//variables
-//html refs
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
-
-//question bank
-const myQuestions = [
-  {
-    question: "Who invented JavaScript?",
-    answers: {
-      a: "Douglas Crockford",
-      b: "Sheryl Sandberg",
-      c: "Brendan Eich"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "Which one of these is a JavaScript package manager?",
-    answers: {
-      a: "Node.js",
-      b: "TypeScript",
-      c: "npm"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "Which tool can you use to ensure code quality?",
-    answers: {
-      a: "Angular",
-      b: "jQuery",
-      c: "RequireJS",
-      d: "ESLint"
-    },
-    correctAnswer: "d"
-  }
-];
-
-//intitiate
-buildQuiz();
-
-// event listeners
-submitButton.addEventListener('click', showResults);
+          
+  <!-- Footer -->
+  <div class="footer">
+    <p>This website is a project for IT3203. More information can be found at <a href = "https://ksuweb.github.io/IT3203/">the class GitHub</a>.</p>
+  </div>
+  <script src="index.js"></script>
+  
+</body>
+</html>
