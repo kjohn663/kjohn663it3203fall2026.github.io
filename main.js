@@ -166,7 +166,7 @@ function showResults() {
 		//pass score as string
 		document.getElementById('score').innerHTML = quiz.result.score.toString();
 		//pass if more than ---
-		if (quiz.result.score > 2) {
+		if (quiz.result.score > 6) {
 			document.getElementById('pass').innerHTML ="Pass";
 		} else {
 			document.getElementById('pass').innerHTML ="Fail";
@@ -239,8 +239,14 @@ window.onload = function() {
 	startTimer();
 	//answer bank
     quiz = new Quiz('quiz', [
-        '42',
         'b',
-        ['b', 'c', 'd']
+        ['b', 'c', 'e', 'f', 'g'],
+		'1990',
+		'a',
+		['c', 'f'],
+		'd',
+		'c',
+		'32',
+		'a'
     ]);
 };
