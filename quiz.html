@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<script type="text/javascript" src="main.js"></script>
     <link rel="stylesheet" href="stylesheet.css">
     <title>kjohn663</title>
 </head>
@@ -28,10 +29,134 @@
     </h1>
   </div>
   
-  <!-- quiz??? -->
-  <div id="quiz"></div>
-  <button id="submit">Submit Quiz</button>
-  <div id="results"></div>
+	<!-- Quiz Results -->
+	<div id="result" class="card">
+		<span id="pass"></span>! You Scored <span id="score"></span>/10 and took <span id="elapsed"></span> seconds.
+	</div>
+	
+	<!-- Timer -->
+	<p>Quiz Timer: <span id="count">---</span> seconds</p>
+
+	<!-- Quiz Container -->
+	<form id="quiz">
+	
+		<!-- Question 1 -->
+            <div class="card question">
+                <div class="question_title">1. What does HTML stand for?</div>
+                <div class="question_answers">
+                    <ul>
+                        <li><label><input type="radio" name="q1" value="a"> HyperTool Markup Langage</label></li>
+                        <li><label><input type="radio" name="q1" value="b"> HyperText Markup Language</label></li>
+						<li><label><input type="radio" name="q1" value="c"> Hyperlinks & Text Marking Langage</label></li>
+                    </ul>
+                </div>
+            </div>
+		
+		<!-- Question 2 -->
+            <div class="card question">
+                <div class="question_title">2. Which of the following are components of a URL?</div>
+                <div class="question_answers">
+                    <ul>
+                        <li><label><input type="checkbox" name="q2" value="a"> variable</label></li>
+                        <li><label><input type="checkbox" name="q2" value="b"> protocol</label></li>
+                        <li><label><input type="checkbox" name="q2" value="c"> path</label></li>
+                        <li><label><input type="checkbox" name="q2" value="d"> chunk</label></li>
+						<li><label><input type="checkbox" name="q2" value="e"> domain</label></li>
+						<li><label><input type="checkbox" name="q2" value="f"> query string</label></li>
+						<li><label><input type="checkbox" name="q2" value="g"> fragment</label></li>
+                    </ul>
+                </div>
+            </div>
+		
+		<!-- Question 3 -->
+            <div class="card question">
+                <div class="question_title">3. What year was the WorldWideWeb created?</div>
+                <div class="question_answers">
+                    <input type="text" name="q3">
+                </div>
+            </div>
+			
+		<!-- Question 4 -->
+            <div class="card question">
+                <div class="question_title">1. IP addresses and URLs are connected using the ___</div>
+                <div class="question_answers">
+                    <ul>
+                        <li><label><input type="radio" name="q4" value="a"> DNS</label></li>
+                        <li><label><input type="radio" name="q4" value="b"> DLS</label></li>
+						<li><label><input type="radio" name="q4" value="c"> DPS</label></li>
+						<li><label><input type="radio" name="q4" value="d"> DNL</label></li>
+                    </ul>
+                </div>
+            </div>
+		
+		<!-- Question 5 -->
+            <div class="card question">
+                <div class="question_title">5. Which of the following web browsers are exclusive to a certain OS?</div>
+                <div class="question_answers">
+                    <ul>
+                        <li><label><input type="checkbox" name="q5" value="a"> Google Chrome</label></li>
+                        <li><label><input type="checkbox" name="q5" value="b"> Mozilla Firefox</label></li>
+                        <li><label><input type="checkbox" name="q5" value="c"> Internet Explorer</label></li>
+                        <li><label><input type="checkbox" name="q5" value="d"> Edge</label></li>
+						<li><label><input type="checkbox" name="q5" value="e"> Brave</label></li>
+						<li><label><input type="checkbox" name="q5" value="f"> Safari</label></li>
+                    </ul>
+                </div>
+            </div>
+			
+		<!-- Question 6 -->
+            <div class="card question">
+                <div class="question_title">6. A web browser acts as a ___ requesting information from a ___</div>
+                <div class="question_answers">
+                    <ul>
+                        <li><label><input type="radio" name="q6" value="a"> recepient, sender</label></li>
+                        <li><label><input type="radio" name="q6" value="b"> client, sender</label></li>
+						<li><label><input type="radio" name="q6" value="c"> receiver, server</label></li>
+						<li><label><input type="radio" name="q6" value="d"> client, server</label></li>
+                    </ul>
+                </div>
+            </div>
+			
+		<!-- Question 7 -->
+            <div class="card question">
+                <div class="question_title">7. Information is sent over the internet in the form of ___</div>
+                <div class="question_answers">
+                    <ul>
+                        <li><label><input type="radio" name="q7" value="a"> pulses</label></li>
+                        <li><label><input type="radio" name="q7" value="b"> parcels</label></li>
+						<li><label><input type="radio" name="q7" value="c"> packets</label></li>
+						<li><label><input type="radio" name="q7" value="d"> packers</label></li>
+                    </ul>
+                </div>
+            </div>
+			
+		<!-- Question 8 -->
+            <div class="card question">
+                <div class="question_title">8. A clickable element that references a different webpage or file is a ___</div>
+                <div class="question_answers">
+                    <input type="text" name="q8">
+                </div>
+            </div>
+		
+		<!-- Question 9 -->
+            <div class="card question">
+                <div class="question_title">9. What does IP stand for in IP address?</div>
+                <div class="question_answers">
+                    <ul>
+                        <li><label><input type="radio" name="q9" value="a"> Internet Protocol</label></li>
+                        <li><label><input type="radio" name="q9" value="b"> Information Packet</label></li>
+						<li><label><input type="radio" name="q9" value="c"> Information Protocol</label></li>
+						<li><label><input type="radio" name="q9" value="d"> Internet Packet</label></li>
+                    </ul>
+                </div>
+            </div>
+		
+		<!-- Answer Button -->
+		<button type="button" onclick="showResults();">Submit</button>
+		
+		<!-- Reset Button -->
+		<button type="reset" onclick="resetQuiz();">Reset</button>
+	</form>
 
           
   <!-- Footer -->
