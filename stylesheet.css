@@ -6,7 +6,7 @@ html{
 body{
   padding 10px;
   font-family: Tahoma, sans-serif;
-  color: #006600;
+  color: #253625;
 }
 
 /* Making divs display as grid */
@@ -124,4 +124,28 @@ img {
   width: 100%;
   background: #e6e6e6;
   text-align: left;
+}
+
+.question_warning {
+    color: #f44336;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+
+.right {
+	color: #47bf67;
+}
+
+.wrong {
+	color: #c24036;
+}
+
+.card {
+  padding: 8px;
+
+}
+
+#result {
+	display: none;
+	color: #000;
 }
